@@ -3,7 +3,7 @@ fyyur-db:
     volumes:
       - fyyur_postgres_data:/var/lib/postgresql/data
     env_file:
-      - ./.env/.backend-dev
+      - ./.env
     ports:
       - "5433:5432"
     networks:
