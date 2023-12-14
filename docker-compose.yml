@@ -1,4 +1,6 @@
-fyyur-db:
+services:
+
+ fyyur-db:
     image: postgres:14.9
     volumes:
       - fyyur_postgres_data:/var/lib/postgresql/data
@@ -8,3 +10,10 @@ fyyur-db:
       - "5433:5432"
     networks:
       - fyyur-network
+
+networks:
+  fyyur-network:
+    driver: bridge
+
+volumes:
+  fyyur_postgres_data:
