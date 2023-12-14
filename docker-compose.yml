@@ -1,0 +1,10 @@
+fyyur-db:
+    image: postgres:14.9
+    volumes:
+      - fyyur_postgres_data:/var/lib/postgresql/data
+    env_file:
+      - ./.env/.backend-dev
+    ports:
+      - "5433:5432"
+    networks:
+      - fyyur-network
