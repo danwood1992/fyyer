@@ -1,4 +1,17 @@
 services:
+  fyyer-api:
+    build:
+      context: .
+      dockerfile: Dockerfile./compose/api/Dockerfile
+    env_file:
+      - ./.env
+    ports:
+      - "3000:3000"
+    networks:
+      - fyyer-network
+    depends_on:
+      - fyyer-db
+
   fyyer-db:
     image: postgres:14.9
     volumes:
