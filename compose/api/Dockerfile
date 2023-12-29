@@ -23,11 +23,11 @@ RUN apt-get update && apt-get upgrade -y \
 COPY ./requirements.txt /requirements.txt
 RUN pip install -r requirements.txt
 
-COPY ./compose/dev/api /entrypoint
-RUN chmod +x /entrypoint
+COPY ./compose/dev/api /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
-COPY ./compose/api /start
-RUN chmod +x /start
+COPY ./compose/api /start.sh
+RUN chmod +x /start.sh
 
 EXPOSE 3000
 
