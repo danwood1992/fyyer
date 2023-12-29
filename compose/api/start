@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e errexit
+set -e pipefail
+set -e nounset
+
+echo "start.sh"
+
+python3 demo_scripts/timer.py
+

@@ -3,6 +3,9 @@ services:
     build:
       context: .
       dockerfile: ./compose/api/Dockerfile
+    command: /start
+    volumes:
+      - .:/opt/fyyer
     env_file:
       - ./.env
     ports:

@@ -25,14 +25,14 @@ RUN pip install --upgrade pip
 COPY ./requirements.txt /requirements.txt
 RUN pip install -r requirements.txt
 
-COPY ./compose/api/entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+COPY ./compose/api/entrypoint /entrypoint
+RUN chmod +x /entrypoint
 
-COPY ./compose/api /start.sh
-RUN chmod +x /start.sh
+COPY ./compose/api/start /start
+RUN chmod +x /start
 
 EXPOSE 3000
 
 WORKDIR /opt/fyyer
 
-ENTRYPOINT [ "/entrypoint.sh" ]
+ENTRYPOINT [ "/entrypoint" ]
