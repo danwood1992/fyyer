@@ -2,7 +2,7 @@ services:
   fyyer-api:
     build:
       context: .
-      dockerfile: Dockerfile./compose/api/Dockerfile
+      dockerfile: ./compose/api/Dockerfile
     env_file:
       - ./.env
     ports:
