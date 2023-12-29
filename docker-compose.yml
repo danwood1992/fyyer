@@ -1,19 +1,29 @@
 services:
-
- fyyur-db:
+  fyyer-db:
     image: postgres:14.9
     volumes:
-      - fyyur_postgres_data:/var/lib/postgresql/data
+      - fyyer_postgres_data:/var/lib/postgresql/data
     env_file:
       - ./.env
     ports:
-      - "5433:5432"
+      - "5432:5432"
     networks:
-      - fyyur-network
+      - fyyer-network
+      
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL:
+        admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: insecurepassword
+    ports:
+      - "5050:80"
+    networks:
+      - fyyer-network
 
 networks:
-  fyyur-network:
+  fyyer-network:
     driver: bridge
 
 volumes:
-  fyyur_postgres_data:
+  fyyer_postgres_data:
