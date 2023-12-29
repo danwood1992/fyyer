@@ -35,4 +35,4 @@ EXPOSE 3000
 
 WORKDIR /opt/fyyer
 
-ENTRYPOINT [ "/entrypoint" ]
+ENTRYPOINT [ "/entrypoint.sh" ]
