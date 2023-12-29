@@ -25,7 +25,7 @@ RUN pip install --upgrade pip
 COPY ./requirements.txt /requirements.txt
 RUN pip install -r requirements.txt
 
-COPY ./compose/api /entrypoint.sh
+COPY ./compose/api/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 COPY ./compose/api /start.sh
