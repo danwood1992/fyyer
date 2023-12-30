@@ -85,7 +85,7 @@ def fetch_all(table_name):
 
     print(f"fetchall result: {result}")
 
-    return
+    return result
 
 def fetch_one(table_name, column, value):
     try:
