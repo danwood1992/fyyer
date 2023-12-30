@@ -6,5 +6,6 @@ set -e nounset
 
 echo "start.sh"
 
-python3 demo_scripts/timer.py
+python3 demo_scripts/keep_alive.py
+python3 demo_scripts/demo_psycopg2.py
 
