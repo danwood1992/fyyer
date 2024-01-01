@@ -20,8 +20,9 @@ with app.app_context():
 @app.route('/')
 def index():
     people = Person.query.all()
-
     return render_template('index.html', people=people)
+
+
 
 if __name__ == '__main__': 
    app.run(host="0.0.0.0", port=5125, debug=True)

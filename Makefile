@@ -21,3 +21,7 @@ restart:
 logs:
 	@echo "Showing Docker logs..."
 	docker compose logs -f
+
+exec-api:
+	@echo "Executing API container..."
+	docker exec -it fyyer-fyyer-api-1 bash
