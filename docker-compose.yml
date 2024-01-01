@@ -9,7 +9,8 @@ services:
     env_file:
       - ./.env
     ports:
-      - "3000:3000"
+      - "443:5125"
+      - "80:5125"
     networks:
       - fyyer-network
     depends_on:

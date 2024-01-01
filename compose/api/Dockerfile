@@ -31,8 +31,6 @@ RUN chmod +x /entrypoint
 COPY ./compose/api/start /start
 RUN chmod +x /start
 
-EXPOSE 3000
-
 WORKDIR /opt/fyyer
 
 ENTRYPOINT [ "/entrypoint" ]
