@@ -24,7 +24,9 @@ all_rows = demo_utils.fetch_all("todo")
 print(type(all_rows))
 
 for row in all_rows:
-    print(row)
+    for item in row:
+        print(f"{item}, type:{type(item)}")
+
 
 
 
