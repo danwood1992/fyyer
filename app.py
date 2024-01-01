@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -12,19 +12,16 @@ class Person(db.Model):
     name = db.Column(db.String(), nullable=False)
 
     def __repr__(self):
-        return f'<Person ID: {self.id}, name: {self.name}>'
+        return f'Person ID: {self.id}, name: {self.name}'
 
 with app.app_context():
     db.create_all()
 
 @app.route('/')
 def index():
-    person = Person.query.first()
-    print(person)
-    if person:
-        return f"{person}"  # This will use __repr__ implicitly
-    else:
-        return 'No person found!'
+    people = Person.query.all()
+
+    return render_template('index.html', people=people)
 
 if __name__ == '__main__': 
    app.run(host="0.0.0.0", port=5125, debug=True)

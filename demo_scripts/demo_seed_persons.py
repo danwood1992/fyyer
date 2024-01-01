@@ -1,7 +1,7 @@
 import demo_utils
 
-demo_utils.insert_row("persons", "name", "'Dan wood'")
-
+demo_utils.insert_row("persons", "name", "'Don wood'")
+demo_utils.insert_row("persons", "name", "'Jason Bourne'")
 
 all_rows = demo_utils.fetch_all("persons")
 
