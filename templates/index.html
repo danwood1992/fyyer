@@ -58,5 +58,19 @@
             {% endfor %}
         </ul>
     </div>
+    <div class="container">
+        <h2 class="section-title">Add Task</h2>
+        <form action="/add-task" method="post">
+            <input type="text" name="description" placeholder="task">
+            <input type="submit" value="Add Task">
+        </form>
+    </div>
+    <div class="container">
+        <h2 class="section-title">Add User</h2>
+        <form action="/add-user" method="post">
+            <input type="text" name="name" placeholder="name">
+            <input type="submit" value="user">
+        </form>
+    </div>
 </body>
 </html>
