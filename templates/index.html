@@ -8,8 +8,12 @@
 
 <body>
     <h1>Flask demo</h1>
-    {% for person in people %}
-    <p>{{person}}</p>
+    <p>Users:</p>
+    {% for user in users %}
+    <p>Name:{{user.name}}, Email:{{user.email}}</p>
     {% endfor %}
-
+    <p>Tasks:</p>
+    {% for task in tasks %}
+    <p>{{task}}, Completed {{task.completed}}</p>
+    {% endfor %}
 </html>
