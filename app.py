@@ -10,7 +10,7 @@ def index():
     return render_template('index.html', users=users, tasks=tasks)
 
 @app.route('/seed/<string:name>')
-def seed_data(name):  # Accept 'name' as a direct parameter
+def seed_data(name):
     try:
         user = User(name=name, email=f"{name.lower()}@mail.com")
         db.session.add(user)

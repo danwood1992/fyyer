@@ -3,17 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
-
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 50px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #fff;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .section-title {
+            color: #333;
+            margin: 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Flask demo</h1>
-    <p>Users:</p>
-    {% for user in users %}
-    <p>Name:{{user.name}}, Email:{{user.email}}</p>
-    {% endfor %}
-    <p>Tasks:</p>
-    {% for task in tasks %}
-    <p>{{task}}, Completed {{task.completed}}</p>
-    {% endfor %}
+    <div class="container">
+        <h1>ToDo app</h1>
+        <h2 class="section-title">Users</h2>
+        <ul>
+            {% for user in users %}
+            <li>{{ user.email }}</li>
+            {% endfor %}
+        </ul>
+        <h2 class="section-title">Tasks</h2>
+        <ul>
+            {% for task in tasks %}
+            <li>{{ task }} - Completed: {{ task.completed }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
 </html>
