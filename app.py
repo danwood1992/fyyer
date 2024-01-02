@@ -27,30 +27,15 @@ def add_task():
 
     return redirect(url_for('index'))
 
-@app.route('/add-user/<string:name>')
-def seed_user(name):
-    try:
-        user = User(name=name, email=f"{name.lower()}@mail.com")
-        db.session.add(user)
-        db.session.commit()
-        return f"User {name} added successfully."
-    except Exception as e:
-        return f"An error occurred: {str(e)}"
-    
-@app.route('/add-task/<string:description>')
-def seed_task(description):
-    try:
-        task = TodoItem(description=description)
-        db.session.add(task)
-        db.session.commit()
-        return f"Task {description} added successfully."
-    except Exception as e:
-        return f"An error occurred: {str(e)}"
+@app.route('/complete-task', methods=['POST'])
+def complete_task():
+    task_id = request.form.get('task_id')
+    task = TodoItem.query.filter_by(id=task_id).first()
+    task.completed = True
+    db.session.commit()
 
+    return redirect(url_for('index'))
 
-
-    
-    
 
 
 if __name__ == '__main__': 
