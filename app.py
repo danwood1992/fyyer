@@ -29,9 +29,22 @@ def add_task():
 
 @app.route('/complete-task', methods=['POST'])
 def complete_task():
-    task_id = request.form.get('task_id')
+    task_id = request.form.get('taskid')
     task = TodoItem.query.filter_by(id=task_id).first()
+    print(f"debug: {task}")
+
     task.completed = True
+    db.session.commit()
+
+    return redirect(url_for('index'))
+
+@app.route('/undo-complete-task', methods=['POST'])
+def undo_complete_task():
+    task_id = request.form.get('taskid')
+    task = TodoItem.query.filter_by(id=task_id).first()
+    print(f"debug: {task}")
+
+    task.completed = False
     db.session.commit()
 
     return redirect(url_for('index'))
