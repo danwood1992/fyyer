@@ -38,7 +38,7 @@ def complete_task():
 
     return redirect(url_for('index'))
 
-@app.route('/undo-complete-task', methods=['POST'])
+@app.route('/undo-complete', methods=['POST'])
 def undo_complete_task():
     task_id = request.form.get('taskid')
     task = TodoItem.query.filter_by(id=task_id).first()

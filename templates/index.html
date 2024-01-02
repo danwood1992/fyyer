@@ -54,9 +54,7 @@
         <h2 class="section-title">Tasks</h2>
         <ul>
             {% for task in tasks %}
-            {% if task.completed %}
-            <li><strike>{{ task.description }}</strike></li>
-            {% else %}
+        
             <li>{{ task }} - Completed: {{ task.completed }}</li>
             <form action="/complete-task" method="post">
                 <input type="hidden" name="taskid" value="{{ task.id }}">
